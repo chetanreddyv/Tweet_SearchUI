@@ -1,4 +1,92 @@
- <div style="border: 1px solid #e1e8ed; border-radius: 4px; margin: 10px; padding: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planner</title>
+  <link rel="stylesheet" href="style1.css">
+
+</head>
+<div style="border: 1px solid #e1e8ed; border-radius: 4px; margin: 10px; padding: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;">
+        <div>
+            <strong>{user['screen_name']}</strong> @{user['screen_name']} · {tweet['created_at_edt']}
+        </div>
+        <p style="margin-top: 10px;">{tweet['text']}</p>
+        <div style="display: flex; justify-content: space-between; color: #657786; margin-top: 10px;">
+            <span>{tweet['reply_count']}  Replies</span>
+            <span>{tweet['retweet_count']}  Retweets</span>
+            <span>{tweet['favorite_count']}  Likes</span>
+            <span>{tweet['source']} </span>
+            <span>{tweet['hashtags']}  Hashtags</span>
+        </div>
+    </div>
+<body>
+  <div id="todolist">
+    <fieldset>
+      <legend>TODO list</legend>
+
+      <div>
+        <div>
+          <input id="todo" class="todo" type="text" placeholder=" Whats on your mind?">
+          <button id="myBtn" type="submit">+</button>
+        </div>
+
+      </div>
+
+      <div id="list" class="list">
+
+      </div>
+    </fieldset>
+
+
+  </div>
+  <script>
+
+    document.getElementById("myBtn").addEventListener("click", listAppend);
+
+
+    function listAppend() {
+
+      var newlist = document.getElementById("todo").value;
+      console.log(newlist);
+      if (newlist != '') {
+        const List = document.createElement("li");
+        List.innerText = newlist;
+        document.getElementById('list').appendChild(List);
+        localStorage.setItem("index", newlist);
+      }
+
+
+    }
+
+    var items = document.querySelector('div.list');
+    items.addEventListener('click', function (e) {
+      console.log("checked");
+      if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+      }
+    });
+
+    var input = document.getElementById("myInput");
+
+    // Execute a function when the user releases a key on the keyboard
+    document.getElementById("todo").addEventListener("keyup", function (event) {
+      // Number 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13) {
+        // Trigger the button element with a click
+        document.getElementById("myBtn").click();
+      }
+    });
+
+
+  </script>
+
+
+</body>
+
+</html> <div style="border: 1px solid #e1e8ed; border-radius: 4px; margin: 10px; padding: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;">
         <div>
             <strong>{user['screen_name']}</strong> @{user['screen_name']} · {tweet['created_at_edt']}
         </div>
