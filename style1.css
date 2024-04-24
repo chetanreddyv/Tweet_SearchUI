@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+body{
+    background-color: beige;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.1),rgba(4, 9, 30, 0.1)), url("pic.jpg");
+    /* background-image:url("pic.jpg"); */
+    background-size: 100%;
+}
+legend{
+    font-family: 'Reenie Beanie', cursive;
+ font-size: 60px;
+ padding-left: 15px;
+ font-weight: 800;
+}
+fieldset{
+width: 400px;
+padding: 10px 10px 10px 10px;
+margin-top: 20px;
+margin-left: 30%;
+
+border-style: none;
+border-width: 1px;
+border-radius: 20px;
+background-color: rgba(245, 236, 248, 1);
+}
+
+li{
+    margin-top: 30px;
+    padding: 10px 15px;
+    list-style-type: none;
+    font-size: 36px;
+    border-radius: 20px;
+    font-family: 'Reenie Beanie', cursive;
+    font-weight:800;
+}
+li:hover{
+  
+
+    background-color: rgba(235, 216, 193, 0.781);
+}
+li.checked{
+    text-decoration: line-through;
+    
+}
+p{
+        font-family: 'Reenie Beanie', cursive;
+        font-weight:800;
+}
+
+.todo{
+    display: inline;
+    border-radius: 20px;
+    background-color: rgba(171, 233, 233, 0.788);
+    border-style: none;
+    padding: 10px 10px 10px 20px;
+    width: 300px;
+}
+.todo:hover{
+    background-color: rgba(130, 224, 236, 0.801);
+}
+button{
+    padding: 4px 20px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgba(185, 171, 233, 0.788);
+    color: rgba(255, 255, 255, 0.904);
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+button:hover{
+    background-color: rgba(157, 84, 240, 0.788);
+}
